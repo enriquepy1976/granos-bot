@@ -533,8 +533,7 @@ function renderChips(){
   const ORDER=['trigo','maiz','girasol','soja','cebada'];
   const RINDES=S.params.rindes||{trigo:5.5,maiz:9,girasol:2.8,soja:2.4,cebada:6};
   document.getElementById('chips').innerHTML=ORDER.filter(g=>S.piz[g]>0).map(g=>{
-    const pn=pizNeto(g);
-    const isG=g==='girasol';
+    const pn=pizNeto(g); const isG=g==='girasol';
     const negsG=S.negocios.filter(n=>normG(n.grano)===g);
     const negsGarcia=negsG.filter(n=>n.comp==='Guido García');
     const mejorN=negsG.length?Math.max(...negsG.map(n=>neto(n))):null;
@@ -561,13 +560,10 @@ function renderChips(){
     if(extraPorHa!==null&&mejorGarciaNeg){
       const color=esGarciaMejor?'#b91c1c':'#1a7a4a';
       const signo=esGarciaMejor?'-':'+';
-      const label=esGarciaMejor?'García mejor vs mejor oferta · '+rinde+' tn/ha':'mejor vs García ('+mejorGarciaNeg.pos+') · '+rinde+' tn/ha';
-      extraHtml='<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
-        +'<div style="font-size:10px;color:#6b7280">'+label+'</div>'
-        +'<div style="font-size:14px;font-weight:700;color:'+color+';font-family:'IBM Plex Mono',monospace">'+signo+'USD '+extraPorHa+'/ha</div>';
+      const label=esGarciaMejor?'García mejor · vs mejor oferta · '+rinde+' tn/ha':'mejor vs García ('+mejorGarciaNeg.pos+') · '+rinde+' tn/ha';
+      extraHtml='<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div><div style="font-size:10px;color:#6b7280">'+label+'</div><div style="font-size:14px;font-weight:700;color:'+color+';font-family:'IBM Plex Mono',monospace">'+signo+'USD '+extraPorHa+'/ha</div>';
     } else if(mejorN!==null&&mejorGarciaN===null){
-      extraHtml='<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
-        +'<div style="font-size:10px;color:#9ca3af;font-style:italic">García sin oferta</div>';
+      extraHtml='<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div><div style="font-size:10px;color:#9ca3af;font-style:italic">García sin oferta</div>';
     }
     const mejorHtml=mejorN!==null
       ?(mejorGarciaN!==null?'<div style="font-size:10px;color:#9ca3af;margin-bottom:3px">García: <b>USD '+mejorGarciaN.toFixed(1)+'</b>'+(mejorGarciaNeg?' · '+mejorGarciaNeg.pos:'')+'</div>':'')
@@ -576,11 +572,7 @@ function renderChips(){
         +'<div style="font-size:11px;font-weight:600;color:'+dc+';margin-bottom:3px">'+(diff>=0?'+':'')+diff+' vs pizarra</div>'
         +detalleHtml+extraHtml
       :'<div style="font-size:10px;color:#9ca3af;font-style:italic;padding:3px 0">sin ofertas</div>';
-    return '<div style="background:#f3f4f6;border-radius:8px;padding:8px 14px;display:flex;flex-direction:column;align-items:flex-start;min-width:160px;max-width:230px">'
-      +'<div style="font-size:12px;font-weight:600;color:#374151">'+GL[g]+(isG?' +'+S.params.bonif+'% MG':'')+'</div>'
-      +'<div style="font-size:10px;color:#9ca3af">pizarra neta: <b style="color:#6b7280">USD '+(pn!=null?pn.toFixed(1):'—')+'</b></div>'
-      +'<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
-      +mejorHtml+'</div>';
+    return '<div style="background:#f3f4f6;border-radius:8px;padding:8px 14px;display:flex;flex-direction:column;align-items:flex-start;min-width:160px;max-width:230px"><div style="font-size:12px;font-weight:600;color:#374151">'+GL[g]+(isG?' +'+S.params.bonif+'% MG':'')+'</div><div style="font-size:10px;color:#9ca3af">pizarra neta: <b style="color:#6b7280">USD '+(pn!=null?pn.toFixed(1):'—')+'</b></div><div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'+mejorHtml+'</div>';
   }).join('');
 }
 function renderStats(){
