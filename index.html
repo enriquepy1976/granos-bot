@@ -535,38 +535,18 @@ function renderChips(){
   document.getElementById('chips').innerHTML = ORDER.filter(g=>S.piz[g]>0).map(g=>{
     const pn = pizNeto(g);
     const isG = g==='girasol';
-    const negsAll = S.negocios.filter(n=>normG(n.grano)===g);
-    const negsGarcia = negsAll.filter(n=>n.comp==='Guido García');
-    if(!negsAll.length) return '';
-
-    // Mejor oferta general
-    const mejorN = Math.max(...negsAll.map(n=>neto(n)));
-    const mejorNeg = negsAll.find(n=>Math.abs(neto(n)-mejorN)<0.01);
-
-    // Mejor oferta de García
+    const negsG = S.negocios.filter(n=>normG(n.grano)===g);
+    const negsGarcia = negsG.filter(n=>n.comp==='Guido García');
+    const mejorN = negsG.length ? Math.max(...negsG.map(n=>neto(n))) : null;
+    const mejorNeg = mejorN!==null ? negsG.find(n=>Math.abs(neto(n)-mejorN)<0.01) : null;
     const mejorGarciaN = negsGarcia.length ? Math.max(...negsGarcia.map(n=>neto(n))) : null;
-    const mejorGarciaNeg = mejorGarciaN !== null ? negsGarcia.find(n=>Math.abs(neto(n)-mejorGarciaN)<0.01) : null;
-
+    const mejorGarciaNeg = mejorGarciaN!==null ? negsGarcia.find(n=>Math.abs(neto(n)-mejorGarciaN)<0.01) : null;
+    const diff = mejorN!==null && pn!==null ? +(mejorN-pn).toFixed(1) : null;
+    const dc = diff!==null ? (diff>=0?'#1a7a4a':'#b91c1c') : '#9ca3af';
     const rinde = RINDES[g] || 1;
-    const diff = pn!=null ? +(mejorN-pn).toFixed(1) : null;
-    const dc = diff!=null ? (diff>=0?'#1a7a4a':'#b91c1c') : '#9ca3af';
-
-    // Diferencial vs García
-    let extraHtml = '';
-    if(mejorGarciaN !== null){
-      const diffGarcia = +(mejorN - mejorGarciaN).toFixed(1);
-      const extraPorHa = +(Math.abs(diffGarcia) * rinde).toFixed(0);
-      const signo = diffGarcia >= 0 ? '+' : '-';
-      const color = diffGarcia >= 0 ? '#1a7a4a' : '#b91c1c';
-      const label = diffGarcia >= 0
-        ? 'mejor vs Guido García · '+rinde+' tn/ha'
-        : 'García supera al mejor · '+rinde+' tn/ha';
-      extraHtml = '<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
-        +'<div style="font-size:10px;color:#6b7280">'+label+'</div>'
-        +'<div style="font-size:14px;font-weight:700;color:'+color+';font-family:\'IBM Plex Mono\',monospace">'+signo+'USD '+extraPorHa+'/ha</div>';
-    }
-
-    // Detalle del mejor negocio
+    const diffGarcia = (mejorN!==null && mejorGarciaN!==null) ? +(mejorN - mejorGarciaN).toFixed(1) : null;
+    const extraPorHa = diffGarcia!==null ? +(Math.abs(diffGarcia)*rinde).toFixed(0) : null;
+    const esGarciaMejor = diffGarcia!==null && diffGarcia < 0;
     let detalleHtml = '';
     if(mejorNeg){
       const base=(+mejorNeg.precio||0)+(+mejorNeg.prima||0);
@@ -574,35 +554,34 @@ function renderChips(){
       const comU=+(base*comPct/100).toFixed(1);
       const fleteN=isG?S.params.gira:(+mejorNeg.gastos||0);
       const parU=parseFloat(mejorNeg.par)||0;
-      const lineas=[
-        mejorNeg.pos||'Disponible',
-        mejorNeg.dest||'',
-        '-'+fleteN+' flete',
-        '-'+comU+' com.('+comPct+'%)',
-        parU>0?'-'+parU+' paritaria':'',
-      ].filter(Boolean);
+      const lineas=[mejorNeg.pos||'Disponible',mejorNeg.dest||',','-'+fleteN+' flete','-'+comU+' com.('+comPct+'%)',parU>0?'-'+parU+' paritaria':''].filter(Boolean);
       detalleHtml = lineas.map(l=>'<div style="font-size:10px;color:#6b7280">'+l+'</div>').join('');
     }
-
-    const garciaInfoHtml = mejorGarciaNeg
-      ? '<div style="font-size:10px;color:#9ca3af;margin-bottom:3px">García: <b>'+mejorGarciaN.toFixed(1)+'</b> · '+mejorGarciaNeg.pos+'</div>'
-      : '<div style="font-size:10px;color:#9ca3af;font-style:italic">García sin oferta</div>';
-
-    const mejorHtml = '<div style="font-size:10px;color:#6b7280;margin-bottom:1px">mejor oferta · <b>'+mejorNeg.comp+'</b></div>'
-      +'<div style="font-size:18px;font-weight:700;color:#111827;font-family:\'IBM Plex Mono\',monospace;line-height:1.2">USD '+mejorN.toFixed(1)+'</div>'
-      +'<div style="font-size:11px;font-weight:600;color:'+dc+';margin-bottom:3px">'+(diff>=0?'+':'')+diff+' vs pizarra</div>'
-      +detalleHtml
-      +'<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
-      +garciaInfoHtml
-      +extraHtml;
-
+    let extraHtml = '';
+    if(extraPorHa!==null && mejorGarciaNeg){
+      const color = esGarciaMejor ? '#b91c1c' : '#1a7a4a';
+      const signo = esGarciaMejor ? '-' : '+';
+      const label = esGarciaMejor ? 'García mejor · vs mejor oferta · '+rinde+' tn/ha' : 'mejor vs García ('+mejorGarciaNeg.pos+') · '+rinde+' tn/ha';
+      extraHtml = '<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
+        +'<div style="font-size:10px;color:#6b7280">'+label+'</div>'
+        +'<div style="font-size:14px;font-weight:700;color:'+color+';font-family:'IBM Plex Mono',monospace">'+signo+'USD '+extraPorHa+'/ha</div>';
+    } else if(mejorN!==null && mejorGarciaN===null){
+      extraHtml = '<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
+        +'<div style="font-size:10px;color:#9ca3af;font-style:italic">García sin oferta</div>';
+    }
+    const mejorHtml = mejorN!==null
+      ? (mejorGarciaN!==null ? '<div style="font-size:10px;color:#9ca3af;margin-bottom:3px">García: <b>USD '+mejorGarciaN.toFixed(1)+'</b>'+(mejorGarciaNeg?' · '+mejorGarciaNeg.pos:'')+'</div>' : '')
+        +'<div style="font-size:10px;color:#6b7280;margin-bottom:1px">mejor oferta · <b>'+mejorNeg.comp+'</b></div>'
+        +'<div style="font-size:18px;font-weight:700;color:#111827;font-family:'IBM Plex Mono',monospace;line-height:1.2">USD '+mejorN.toFixed(1)+'</div>'
+        +'<div style="font-size:11px;font-weight:600;color:'+dc+';margin-bottom:3px">'+(diff>=0?'+':'')+diff+' vs pizarra</div>'
+        +detalleHtml+extraHtml
+      : '<div style="font-size:10px;color:#9ca3af;font-style:italic;padding:3px 0">sin ofertas</div>';
     return '<div style="background:#f3f4f6;border-radius:8px;padding:8px 14px;display:flex;flex-direction:column;align-items:flex-start;min-width:160px;max-width:230px">'
       +'<div style="font-size:12px;font-weight:600;color:#374151">'+GL[g]+(isG?' +'+S.params.bonif+'% MG':'')+'</div>'
       +'<div style="font-size:10px;color:#9ca3af">pizarra neta: <b style="color:#6b7280">USD '+(pn!=null?pn.toFixed(1):'—')+'</b></div>'
       +'<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
-      +mejorHtml
-      +'</div>';
-  }).filter(Boolean).join('');
+      +mejorHtml+'</div>';
+  }).join('');
 }
 function renderStats(){
   const ns = filtroG ? S.negocios.filter(n=>n.grano===filtroG) : S.negocios;
