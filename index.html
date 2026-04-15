@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tracker de Granos — Pablo Cocola</title>
+<title>Tracker de Granos â Pablo Cocola</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -119,10 +119,10 @@ td.pos-td{white-space:nowrap;width:115px;font-size:12px;font-weight:600}
 <body>
 
 <header>
-  <h1>▸ TRACKER DE GRANOS</h1>
+  <h1>â¸ TRACKER DE GRANOS</h1>
   <div style="display:flex;align-items:center;gap:10px">
     <span class="sub" id="hdr-f"></span>
-    <button id="admin-btn" onclick="loginAdmin()" style="border:none;border-radius:6px;padding:5px 12px;font-size:11px;font-weight:600;cursor:pointer;color:white;font-family:'IBM Plex Sans',sans-serif;background:rgba(255,255,255,0.15)">🔒 Solo lectura</button>
+    <button id="admin-btn" onclick="loginAdmin()" style="border:none;border-radius:6px;padding:5px 12px;font-size:11px;font-weight:600;cursor:pointer;color:white;font-family:'IBM Plex Sans',sans-serif;background:rgba(255,255,255,0.15)">ð Solo lectura</button>
   </div>
 </header>
 
@@ -138,7 +138,7 @@ td.pos-td{white-space:nowrap;width:115px;font-size:12px;font-weight:600}
 <!-- TABLERO -->
 <div id="pnl-tab" class="panel on">
   <div class="src-row">
-    <span class="src-tag s-am">Pizarra Quequén estimada</span>
+    <span class="src-tag s-am">Pizarra QuequÃ©n estimada</span>
     <span class="src-tag s-mat">Futuros MATBA</span>
   </div>
   <div class="chips" id="chips"></div>
@@ -147,16 +147,16 @@ td.pos-td{white-space:nowrap;width:115px;font-size:12px;font-weight:600}
   </div>
   <div class="stats" id="stats"></div>
   <div class="legenda">
-    <div class="leg"><span class="sem sg"></span>Buen precio (≥ pizarra −5%)</div>
-    <div class="leg"><span class="sem sy"></span>Aceptable (−5% a −10%)</div>
-    <div class="leg"><span class="sem sr"></span>Precio bajo (más −10%)</div>
-    <div class="leg"><span class="sem spiz"></span>Pizarra Quequén</div>
+    <div class="leg"><span class="sem sg"></span>Buen precio (â¥ pizarra â5%)</div>
+    <div class="leg"><span class="sem sy"></span>Aceptable (â5% a â10%)</div>
+    <div class="leg"><span class="sem sr"></span>Precio bajo (mÃ¡s â10%)</div>
+    <div class="leg"><span class="sem spiz"></span>Pizarra QuequÃ©n</div>
     <div class="leg"><span class="sem smat"></span>Futuro MATBA</div>
   </div>
   <div style="background:#e8f5ee;border:1px solid #2d9e63;border-radius:10px;padding:14px 18px;margin-bottom:14px">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
       <div>
-        <div style="font-size:13px;font-weight:600;color:#1a7a4a">⚡ Actualización automática</div>
+        <div style="font-size:13px;font-weight:600;color:#1a7a4a">â¡ ActualizaciÃ³n automÃ¡tica</div>
         <div style="font-size:11px;color:#2d9e63;margin-top:2px">Busca pizarras, MATBA y procesa mensajes de WhatsApp pendientes</div>
       </div>
       <button id="act-btn" onclick="actualizarTodo()" style="background:#1a7a4a;color:white;border:none;border-radius:7px;padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif">
@@ -170,7 +170,7 @@ td.pos-td{white-space:nowrap;width:115px;font-size:12px;font-weight:600}
     <div class="seg" id="seg-g">
       <button class="on" onclick="setFG(this,'')">Todos</button>
       <button onclick="setFG(this,'Trigo')">Trigo</button>
-      <button onclick="setFG(this,'Maíz')">Maíz</button>
+      <button onclick="setFG(this,'MaÃ­z')">MaÃ­z</button>
       <button onclick="setFG(this,'Girasol')">Girasol</button>
       <button onclick="setFG(this,'Soja')">Soja</button>
       <button onclick="setFG(this,'Cebada')">Cebada</button>
@@ -184,18 +184,18 @@ td.pos-td{white-space:nowrap;width:115px;font-size:12px;font-weight:600}
 <!-- WHATSAPP -->
 <div id="pnl-wa" class="panel">
   <div class="api-box">
-    <b>API Key de Anthropic</b> — necesaria para interpretar mensajes con IA.<br>
+    <b>API Key de Anthropic</b> â necesaria para interpretar mensajes con IA.<br>
     <div style="display:flex;gap:8px;margin-top:8px;align-items:center;flex-wrap:wrap">
       <input type="password" id="api-key" placeholder="sk-ant-api03-..." style="flex:1;min-width:200px;font-size:12px;padding:6px 10px;border:1px solid #fcd34d;border-radius:6px;font-family:'IBM Plex Mono',monospace">
       <button class="btn-sm" onclick="saveApiKey()" style="white-space:nowrap">Guardar clave</button>
     </div>
     <div id="api-status" style="font-size:11px;margin-top:6px;color:var(--gris)">Sin clave guardada</div>
   </div>
-  <div class="wa-hint">Pegá el mensaje de WhatsApp tal cual lo recibís. La IA extrae los negocios automáticamente y los carga en el tablero.</div>
+  <div class="wa-hint">PegÃ¡ el mensaje de WhatsApp tal cual lo recibÃ­s. La IA extrae los negocios automÃ¡ticamente y los carga en el tablero.</div>
   <div class="card">
     <div class="fld" style="margin-bottom:10px">
       <label>Mensaje de WhatsApp</label>
-      <textarea id="wa-txt" placeholder="Ej: Maíz qq&#10;Disponible: usd 202&#10;Julio: usd 190&#10;— Pablo Cocola"></textarea>
+      <textarea id="wa-txt" placeholder="Ej: MaÃ­z qq&#10;Disponible: usd 202&#10;Julio: usd 190&#10;â Pablo Cocola"></textarea>
     </div>
     <div class="g2" style="margin-bottom:6px">
       <div class="fld"><label>Corredor / Comprador</label><input type="text" id="wa-comp" placeholder="Pablo Cocola, Dos Caciques..."></div>
@@ -209,22 +209,22 @@ td.pos-td{white-space:nowrap;width:115px;font-size:12px;font-weight:600}
 <!-- PIZARRA -->
 <div id="pnl-piz" class="panel">
   <div class="card">
-    <div class="card-title">Precios de pizarra Quequén (USD/t)</div>
+    <div class="card-title">Precios de pizarra QuequÃ©n (USD/t)</div>
     <div class="g5" style="margin-bottom:10px">
       <div class="fld"><label>Trigo QQ</label><input type="number" id="rp-trigo" step="0.5"></div>
-      <div class="fld"><label>Maíz</label><input type="number" id="rp-maiz" step="0.5"></div>
+      <div class="fld"><label>MaÃ­z</label><input type="number" id="rp-maiz" step="0.5"></div>
       <div class="fld"><label>Girasol</label><input type="number" id="rp-girasol" step="0.5"></div>
       <div class="fld"><label>Soja</label><input type="number" id="rp-soja" step="0.5"></div>
       <div class="fld"><label>Cebada</label><input type="number" id="rp-cebada" step="0.5"></div>
     </div>
-    <div class="card-title" style="margin-top:10px">Parámetros de cálculo</div>
+    <div class="card-title" style="margin-top:10px">ParÃ¡metros de cÃ¡lculo</div>
     <div class="g4" style="margin-bottom:4px">
       <div class="fld"><label>Flete general (USD/t)</label><input type="number" id="fp-gen" step="0.5"></div>
       <div class="fld"><label>Flete girasol (USD/t)</label><input type="number" id="fp-gira" step="0.5"></div>
       <div class="fld"><label>Bonif. girasol MG %</label><input type="number" id="fp-bonif" step="0.5"></div>
       <div class="fld"><label>Flete MATBA (USD/t)</label><input type="number" id="fp-matba" step="0.5"></div>
     </div>
-    <button class="btn" onclick="savePiz()">Guardar pizarra y parámetros</button>
+    <button class="btn" onclick="savePiz()">Guardar pizarra y parÃ¡metros</button>
   </div>
   <div class="card">
     <div class="card-title">Futuros MATBA (USD/t)</div>
@@ -239,23 +239,23 @@ td.pos-td{white-space:nowrap;width:115px;font-size:12px;font-weight:600}
     <div class="card-title">Registrar negocio manualmente</div>
     <div class="g4" style="margin-bottom:10px">
       <div class="fld"><label>Grano</label>
-        <select id="n-g"><option>Trigo</option><option>Maíz</option><option>Girasol</option><option>Soja</option><option>Cebada</option></select></div>
+        <select id="n-g"><option>Trigo</option><option>MaÃ­z</option><option>Girasol</option><option>Soja</option><option>Cebada</option></select></div>
       <div class="fld"><label>Destino</label>
-        <select id="n-d"><option>Quequén</option><option>Tandil</option><option>San Manuel</option><option>Bahía Blanca</option><option>Rosario</option><option>Otro</option></select></div>
+        <select id="n-d"><option>QuequÃ©n</option><option>Tandil</option><option>San Manuel</option><option>BahÃ­a Blanca</option><option>Rosario</option><option>Otro</option></select></div>
       <div class="fld"><label>Comprador / Corredor</label><input type="text" id="n-c" placeholder="Pablo Cocola..."></div>
-      <div class="fld"><label>Condición</label>
-        <select id="n-k"><option>Disponible</option><option>A fijar</option><option>Fija a término</option><option>Con prima</option><option>Canje</option></select></div>
+      <div class="fld"><label>CondiciÃ³n</label>
+        <select id="n-k"><option>Disponible</option><option>A fijar</option><option>Fija a tÃ©rmino</option><option>Con prima</option><option>Canje</option></select></div>
     </div>
     <div class="g4" style="margin-bottom:10px">
       <div class="fld"><label>Precio base (USD/t)</label><input type="number" id="n-p" step="0.5" placeholder="200"></div>
       <div class="fld"><label>Prima (USD/t)</label><input type="number" id="n-pr" step="0.5" value="0"></div>
       <div class="fld"><label>Gastos / flete (USD/t)</label><input type="number" id="n-f" step="0.5" value="20"></div>
       <div class="fld"><label>Merma %</label><input type="number" id="n-m" step="0.1" value="0"></div>
-      <div class="fld"><label>Comisión %</label><input type="number" id="n-com" step="0.1" value="1"></div>
+      <div class="fld"><label>ComisiÃ³n %</label><input type="number" id="n-com" step="0.1" value="1"></div>
       <div class="fld"><label>Paritaria (USD/t)</label><input type="number" id="n-par" step="0.5" value="0"></div>
     </div>
     <div class="g3" style="margin-bottom:4px">
-      <div class="fld"><label>Posición / entrega</label><input type="text" id="n-pos" placeholder="Disponible, Jul 2026..."></div>
+      <div class="fld"><label>PosiciÃ³n / entrega</label><input type="text" id="n-pos" placeholder="Disponible, Jul 2026..."></div>
       <div class="fld"><label>Fecha oferta</label><input type="date" id="n-fd"></div>
       <div class="fld"><label>Observaciones</label><input type="text" id="n-o" placeholder="Paro, vol. limitado..."></div>
     </div>
@@ -267,7 +267,7 @@ td.pos-td{white-space:nowrap;width:115px;font-size:12px;font-weight:600}
 <div class="toast" id="toast"></div>
 
 <script>
-// ══ ESTADO — datos hardcodeados, nunca vacío ══════════════════
+// ââ ESTADO â datos hardcodeados, nunca vacÃ­o ââââââââââââââââââ
 const KEY = 'tgv5';
 
 const DATA_VERSION = 31; // Incrementar cada vez que cambien pizarra o params
@@ -275,7 +275,7 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqHBjbxC_rfAMk
 const ADMIN_HASH = '9d8d72c0762651b750b55fe1cbd8c23976e8c989c8f50043cff8665e6ff81e90';
 const SHARED_KEY = 'tgv_shared_v1';
 
-// ── AUTH ──────────────────────────────────────────────────────
+// ââ AUTH ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 let isAdmin = false;
 
 async function sha256(msg){
@@ -292,7 +292,7 @@ async function loginAdmin(){
     localStorage.setItem('tg_admin', hash);
     renderAdminBtn();
     renderAll();
-    toast('Modo admin activado ✓');
+    toast('Modo admin activado â');
   } else {
     alert('Clave incorrecta');
   }
@@ -315,17 +315,17 @@ function renderAdminBtn(){
   const el = document.getElementById('admin-btn');
   if(!el) return;
   if(isAdmin){
-    el.innerHTML = '🔓 Admin <span onclick="event.stopPropagation();logoutAdmin()" style="font-size:10px;opacity:0.8;cursor:pointer;margin-left:4px">[salir]</span>';
+    el.innerHTML = 'ð Admin <span onclick="event.stopPropagation();logoutAdmin()" style="font-size:10px;opacity:0.8;cursor:pointer;margin-left:4px">[salir]</span>';
     el.style.background = '#f59e0b';
     el.onclick = null;
   } else {
-    el.innerHTML = '🔒 Solo lectura';
+    el.innerHTML = 'ð Solo lectura';
     el.style.background = 'rgba(255,255,255,0.15)';
     el.onclick = loginAdmin;
   }
 }
 
-// ── SHARED STORAGE ────────────────────────────────────────────
+// ââ SHARED STORAGE ââââââââââââââââââââââââââââââââââââââââââââ
 async function loadFromSheet(){
   try {
     const resp = await fetch(APPS_SCRIPT_URL);
@@ -333,7 +333,7 @@ async function loadFromSheet(){
     if(data.ok && data.negocios && data.negocios.length > 0){
       S.negocios = data.negocios.map((n,i) => ({
         id: i+1,
-        grano: String(n.grano||''), dest: String(n.dest||'Quequén'), comp: String(n.comp||''),
+        grano: String(n.grano||''), dest: String(n.dest||'QuequÃ©n'), comp: String(n.comp||''),
         cond: String(n.cond||'Disponible'), precio: parseFloat(n.precio)||0, prima: parseFloat(n.prima)||0,
         gastos: parseFloat(n.gastos)||20, merma: parseFloat(n.merma)||0, com: parseFloat(n.com)||1,
         par: parseFloat(n.par)||0, pos: String(n.pos||''), fecha: String(n.fecha||''), obs: String(n.obs||'')
@@ -341,7 +341,7 @@ async function loadFromSheet(){
       save();
       console.log('Sheet: ' + S.negocios.length + ' negocios cargados');
     }
-  } catch(e){ console.log('Sin conexión a Sheet:', e.message); }
+  } catch(e){ console.log('Sin conexiÃ³n a Sheet:', e.message); }
 }
 
 async function loadShared(){
@@ -377,10 +377,10 @@ const DEFAULTS = {
     soja:   [{pos:'Disponible', val:314, src:'MBC 13/4/2026'},{pos:'May 2026', val:324.30},{pos:'Jul 2026', val:332.50},{pos:'Nov 2026', val:342.00}],
     cebada: [{pos:'Disponible', val:205, src:'MBC 13/4/2026'},{pos:'Dic 2026', val:215.00},{pos:'Ene 2027', val:217.00}]
   },
-    negocios: [{"id":1,"grano":"Trigo","dest":"Quequén","comp":"Pablo Cocola","cond":"Disponible","precio":215,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":2,"grano":"Trigo","dest":"Quequén","comp":"Pablo Cocola","cond":"Fija a término","precio":217,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Dic 2026/Ene 2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Trigo QQ Dic/Ene"},{"id":3,"grano":"Cebada","dest":"Quequén","comp":"Pablo Cocola","cond":"Fija a término","precio":207,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"2026-04-01T03:00:00.000Z","fecha":"2026-04-14T03:00:00.000Z","obs":"Cebada forr QQ"},{"id":4,"grano":"Cebada","dest":"Quequén","comp":"Pablo Cocola","cond":"Fija a término","precio":208,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"2026-05-01T03:00:00.000Z","fecha":"2026-04-14T03:00:00.000Z","obs":"Cebada forr QQ"},{"id":5,"grano":"Cebada","dest":"Quequén","comp":"Pablo Cocola","cond":"Fija a término","precio":210,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"2026-06-01T03:00:00.000Z","fecha":"2026-04-14T03:00:00.000Z","obs":"Cebada forr QQ"},{"id":6,"grano":"Cebada","dest":"Quequén","comp":"Pablo Cocola","cond":"Fija a término","precio":207,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Dic 2026/Ene 2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Cebada forr Dic/Ene"},{"id":7,"grano":"Girasol","dest":"Tandil","comp":"Pablo Cocola","cond":"Disponible","precio":360,"prima":20,"gastos":7,"merma":0.5,"com":1,"par":0,"pos":"Abr/May","fecha":"2026-04-14T03:00:00.000Z","obs":"Común. Sin flete salida ni paritaria"},{"id":8,"grano":"Girasol","dest":"Tandil","comp":"Pablo Cocola","cond":"Fija a término","precio":360,"prima":40,"gastos":7,"merma":0.5,"com":1,"par":0,"pos":"Jun/Jul","fecha":"2026-04-14T03:00:00.000Z","obs":"Común Jun/Jul"},{"id":9,"grano":"Girasol","dest":"Tandil","comp":"Pablo Cocola","cond":"Disponible","precio":360,"prima":30,"gastos":7,"merma":0.5,"com":1,"par":0,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":"Oleico"},{"id":10,"grano":"Maíz","dest":"Quequén","comp":"Pablo Cocola","cond":"Disponible","precio":202,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":11,"grano":"Maíz","dest":"Quequén","comp":"Pablo Cocola","cond":"Fija a término","precio":187,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Jul 2026","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":12,"grano":"Maíz","dest":"Quequén","comp":"Pablo Cocola","cond":"Fija a término","precio":187,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Ago 2026","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":13,"grano":"Soja","dest":"Quequén","comp":"Pablo Cocola","cond":"A fijar","precio":307,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"2026-05-01T03:00:00.000Z","fecha":"2026-04-08T03:00:00.000Z","obs":"A fijar pizarra Rosario − USD 7. Hasta 30/06/2026."},{"id":14,"grano":"Girasol","dest":"Necochea","comp":"Pedro Perea","cond":"Disponible","precio":360,"prima":30,"gastos":20,"merma":0.5,"com":1,"par":0,"pos":"Disponible","fecha":"2026-04-15","obs":"Oleico. Muerto en 360+30. Van a vender producción propia, no esperan mejora."},{"id":15,"grano":"Girasol","dest":"Tandil","comp":"Guido García","cond":"Disponible","precio":360,"prima":30,"gastos":7,"merma":0.5,"com":3,"par":4,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":"Oleico. Pago 10 días."},{"id":16,"grano":"Girasol","dest":"Tandil","comp":"Guido García","cond":"Disponible","precio":360,"prima":15,"gastos":7,"merma":0.5,"com":3,"par":4,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":"Común. Pago 10 días."},{"id":17,"grano":"Trigo","dest":"Quequén","comp":"Guido García","cond":"Fija a término","precio":220,"prima":0,"gastos":20,"merma":0,"com":3,"par":4,"pos":"2027-01-01T03:00:00.000Z","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":18,"grano":"Cebada","dest":"Quequén","comp":"Guido García","cond":"Fija a término","precio":222,"prima":0,"gastos":20,"merma":0,"com":3,"par":4,"pos":"2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Idea precio 2027. Rango 220/225 QQ."},{"id":19,"grano":"Trigo","dest":"Quequén","comp":"Guido García","cond":"Fija a término","precio":220,"prima":0,"gastos":20,"merma":0,"com":3,"par":4,"pos":"2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Idea precio 2027."},{"id":20,"grano":"Maíz","dest":"Quequén","comp":"Guido García","cond":"Fija a término","precio":180,"prima":0,"gastos":20,"merma":0,"com":3,"par":4,"pos":"2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Idea precio 2027."},{"id":1776270712397,"grano":"Trigo","dest":"Quequén","comp":"Pablo Cocola","cond":"A fijar","precio":210,"prima":2,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Hasta 30/12/2026","fecha":"2026-04-15","obs":"A fijar por pizarra QQ + USD 2. Descarga esta semana o cuando se levante el paro. Volumen limitado."}]
+    negocios: [{"id":1,"grano":"Trigo","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"Disponible","precio":215,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":2,"grano":"Trigo","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"Fija a tÃ©rmino","precio":217,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Dic 2026/Ene 2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Trigo QQ Dic/Ene"},{"id":3,"grano":"Cebada","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"Fija a tÃ©rmino","precio":207,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"2026-04-01T03:00:00.000Z","fecha":"2026-04-14T03:00:00.000Z","obs":"Cebada forr QQ"},{"id":4,"grano":"Cebada","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"Fija a tÃ©rmino","precio":208,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"2026-05-01T03:00:00.000Z","fecha":"2026-04-14T03:00:00.000Z","obs":"Cebada forr QQ"},{"id":5,"grano":"Cebada","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"Fija a tÃ©rmino","precio":210,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"2026-06-01T03:00:00.000Z","fecha":"2026-04-14T03:00:00.000Z","obs":"Cebada forr QQ"},{"id":6,"grano":"Cebada","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"Fija a tÃ©rmino","precio":207,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Dic 2026/Ene 2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Cebada forr Dic/Ene"},{"id":7,"grano":"Girasol","dest":"Tandil","comp":"Pablo Cocola","cond":"Disponible","precio":360,"prima":20,"gastos":7,"merma":0.5,"com":1,"par":0,"pos":"Abr/May","fecha":"2026-04-14T03:00:00.000Z","obs":"ComÃºn. Sin flete salida ni paritaria"},{"id":8,"grano":"Girasol","dest":"Tandil","comp":"Pablo Cocola","cond":"Fija a tÃ©rmino","precio":360,"prima":40,"gastos":7,"merma":0.5,"com":1,"par":0,"pos":"Jun/Jul","fecha":"2026-04-14T03:00:00.000Z","obs":"ComÃºn Jun/Jul"},{"id":9,"grano":"Girasol","dest":"Tandil","comp":"Pablo Cocola","cond":"Disponible","precio":360,"prima":30,"gastos":7,"merma":0.5,"com":1,"par":0,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":"Oleico"},{"id":10,"grano":"MaÃ­z","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"Disponible","precio":202,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":11,"grano":"MaÃ­z","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"Fija a tÃ©rmino","precio":187,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Jul 2026","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":12,"grano":"MaÃ­z","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"Fija a tÃ©rmino","precio":187,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Ago 2026","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":13,"grano":"Soja","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"A fijar","precio":307,"prima":0,"gastos":20,"merma":0,"com":1,"par":0,"pos":"2026-05-01T03:00:00.000Z","fecha":"2026-04-08T03:00:00.000Z","obs":"A fijar pizarra Rosario â USD 7. Hasta 30/06/2026."},{"id":14,"grano":"Girasol","dest":"Necochea","comp":"Pedro Perea","cond":"Disponible","precio":360,"prima":30,"gastos":20,"merma":0.5,"com":1,"par":0,"pos":"Disponible","fecha":"2026-04-15","obs":"Oleico. Muerto en 360+30. Van a vender producciÃ³n propia, no esperan mejora."},{"id":15,"grano":"Girasol","dest":"Tandil","comp":"Guido GarcÃ­a","cond":"Disponible","precio":360,"prima":30,"gastos":7,"merma":0.5,"com":3,"par":4,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":"Oleico. Pago 10 dÃ­as."},{"id":16,"grano":"Girasol","dest":"Tandil","comp":"Guido GarcÃ­a","cond":"Disponible","precio":360,"prima":15,"gastos":7,"merma":0.5,"com":3,"par":4,"pos":"Disponible","fecha":"2026-04-14T03:00:00.000Z","obs":"ComÃºn. Pago 10 dÃ­as."},{"id":17,"grano":"Trigo","dest":"QuequÃ©n","comp":"Guido GarcÃ­a","cond":"Fija a tÃ©rmino","precio":220,"prima":0,"gastos":20,"merma":0,"com":3,"par":4,"pos":"2027-01-01T03:00:00.000Z","fecha":"2026-04-14T03:00:00.000Z","obs":""},{"id":18,"grano":"Cebada","dest":"QuequÃ©n","comp":"Guido GarcÃ­a","cond":"Fija a tÃ©rmino","precio":222,"prima":0,"gastos":20,"merma":0,"com":3,"par":4,"pos":"2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Idea precio 2027. Rango 220/225 QQ."},{"id":19,"grano":"Trigo","dest":"QuequÃ©n","comp":"Guido GarcÃ­a","cond":"Fija a tÃ©rmino","precio":220,"prima":0,"gastos":20,"merma":0,"com":3,"par":4,"pos":"2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Idea precio 2027."},{"id":20,"grano":"MaÃ­z","dest":"QuequÃ©n","comp":"Guido GarcÃ­a","cond":"Fija a tÃ©rmino","precio":180,"prima":0,"gastos":20,"merma":0,"com":3,"par":4,"pos":"2027","fecha":"2026-04-14T03:00:00.000Z","obs":"Idea precio 2027."},{"id":1776270712397,"grano":"Trigo","dest":"QuequÃ©n","comp":"Pablo Cocola","cond":"A fijar","precio":210,"prima":2,"gastos":20,"merma":0,"com":1,"par":0,"pos":"Hasta 30/12/2026","fecha":"2026-04-15","obs":"A fijar por pizarra QQ + USD 2. Descarga esta semana o cuando se levante el paro. Volumen limitado."}]
 };
 
-// Cargar desde localStorage, pero SIEMPRE mergear con DEFAULTS para no quedar vacío
+// Cargar desde localStorage, pero SIEMPRE mergear con DEFAULTS para no quedar vacÃ­o
 function loadState(){
   try {
     const raw = localStorage.getItem(KEY);
@@ -388,7 +388,7 @@ function loadState(){
       const saved = JSON.parse(raw);
       const versionOK = saved.dataVersion === DATA_VERSION;
       return {
-        // Pizarra y params: si la versión cambió, usar DEFAULTS (tienen datos nuevos)
+        // Pizarra y params: si la versiÃ³n cambiÃ³, usar DEFAULTS (tienen datos nuevos)
         piz:    versionOK && saved.piz    ? saved.piz    : JSON.parse(JSON.stringify(DEFAULTS.piz)),
         params: versionOK && saved.params ? saved.params : JSON.parse(JSON.stringify(DEFAULTS.params)),
         matba:  versionOK && saved.matba  ? saved.matba  : JSON.parse(JSON.stringify(DEFAULTS.matba)),
@@ -409,37 +409,37 @@ const save = () => {
   }catch(e){} 
 };
 
-// ══ API KEY ══════════════════════════════════════════════════
+// ââ API KEY ââââââââââââââââââââââââââââââââââââââââââââââââââ
 function getApiKey(){ return localStorage.getItem('tg_apikey')||''; }
 function saveApiKey(){
   const k = document.getElementById('api-key').value.trim();
-  if(!k){ alert('Ingresá la API key'); return; }
+  if(!k){ alert('IngresÃ¡ la API key'); return; }
   localStorage.setItem('tg_apikey', k);
-  document.getElementById('api-status').textContent = '✓ Clave guardada (sk-ant-...'+k.slice(-4)+')';
+  document.getElementById('api-status').textContent = 'â Clave guardada (sk-ant-...'+k.slice(-4)+')';
   document.getElementById('api-status').style.color = 'var(--verde)';
-  toast('API key guardada ✓');
+  toast('API key guardada â');
 }
 function initApiKeyStatus(){
   const k = getApiKey();
   if(k){
     document.getElementById('api-key').value = k;
-    document.getElementById('api-status').textContent = '✓ Clave guardada (sk-ant-...'+k.slice(-4)+')';
+    document.getElementById('api-status').textContent = 'â Clave guardada (sk-ant-...'+k.slice(-4)+')';
     document.getElementById('api-status').style.color = 'var(--verde)';
   }
 }
 
-// ══ HELPERS ══════════════════════════════════════════════════
+// ââ HELPERS ââââââââââââââââââââââââââââââââââââââââââââââââââ
 const normG = s => (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
-  .replace(/trigo.*/,'trigo').replace('maíz','maiz').replace('maiz','maiz');
-const GL  = {trigo:'Trigo QQ',maiz:'Maíz',girasol:'Girasol',soja:'Soja',cebada:'Cebada'};
-const DC  = {Quequén:'b-az',Tandil:'b-tl','San Manuel':'b-vl','Bahía Blanca':'b-am',Rosario:'b-gy',Otro:'b-gy'};
-const CC  = {Disponible:'b-gn','A fijar':'b-am','Fija a término':'b-gy','Con prima':'b-am',Canje:'b-gy'};
+  .replace(/trigo.*/,'trigo').replace('maÃ­z','maiz').replace('maiz','maiz');
+const GL  = {trigo:'Trigo QQ',maiz:'MaÃ­z',girasol:'Girasol',soja:'Soja',cebada:'Cebada'};
+const DC  = {QuequÃ©n:'b-az',Tandil:'b-tl','San Manuel':'b-vl','BahÃ­a Blanca':'b-am',Rosario:'b-gy',Otro:'b-gy'};
+const CC  = {Disponible:'b-gn','A fijar':'b-am','Fija a tÃ©rmino':'b-gy','Con prima':'b-am',Canje:'b-gy'};
 
 function posOrd(p){
   const s=(p||'').toLowerCase();
   if(s.includes('disponible')||s.includes('inmediato')) return 0;
   if(s.includes('semana')) return 1;
-  // Extraer año si está presente (ej: "jul 2026" → año 2026, mes 7)
+  // Extraer aÃ±o si estÃ¡ presente (ej: "jul 2026" â aÃ±o 2026, mes 7)
   const yearMatch = s.match(/20(\d\d)/);
   const year = yearMatch ? parseInt(yearMatch[1]) : 26; // default 2026
   const meses=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
@@ -470,7 +470,7 @@ function pizNeto(gk){
 function getSem(n,pn){ if(!pn) return 'y'; const p=(n-pn)/Math.abs(pn)*100; return p>=-5?'g':p>=-10?'y':'r'; }
 function fmtD(v){ return `<span class="${v>=0?'dp':v>=-15?'dnu':'dn'}">${v>=0?'+':''}${v.toFixed(1)}</span>`; }
 
-// ══ TABS ═════════════════════════════════════════════════════
+// ââ TABS âââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const TABS=['tab','wa','piz','new'];
 function sw(t){
   document.querySelectorAll('.tab').forEach((el,i)=>el.classList.toggle('on',TABS[i]===t));
@@ -480,7 +480,7 @@ function sw(t){
   if(t==='piz') fillPizForm();
 }
 
-// ══ INIT ═════════════════════════════════════════════════════
+// ââ INIT âââââââââââââââââââââââââââââââââââââââââââââââââââââ
 let filtroG = '';
 window.addEventListener('DOMContentLoaded', async ()=>{
   const hoy = new Date().toISOString().split('T')[0];
@@ -496,14 +496,14 @@ window.addEventListener('DOMContentLoaded', async ()=>{
   renderAll();
 });
 
-// ══ TOAST ════════════════════════════════════════════════════
+// ââ TOAST ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function toast(m){
   const e=document.getElementById('toast');
   e.textContent=m; e.classList.add('show');
   setTimeout(()=>e.classList.remove('show'),2400);
 }
 
-// ══ FILTRO ═══════════════════════════════════════════════════
+// ââ FILTRO âââââââââââââââââââââââââââââââââââââââââââââââââââ
 function setFG(btn,g){
   filtroG=g;
   document.querySelectorAll('#seg-g button').forEach(b=>b.classList.remove('on'));
@@ -511,13 +511,13 @@ function setFG(btn,g){
   renderTb();
 }
 
-// ══ TABLERO ══════════════════════════════════════════════════
+// ââ TABLERO ââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 
 
 function renderAll(){
   renderChips(); renderStats(); renderTb();
-  // Mostrar/ocultar controles de edición según modo
+  // Mostrar/ocultar controles de ediciÃ³n segÃºn modo
   const editEls = ['tab-new','btn-limpiar'];
   editEls.forEach(id=>{
     const el = document.getElementById(id);
@@ -535,58 +535,38 @@ function renderChips(){
   document.getElementById('chips').innerHTML = ORDER.filter(g=>S.piz[g]>0).map(g=>{
     const pn = pizNeto(g);
     const isG = g==='girasol';
-    const negsG = S.negocios.filter(n=>normG(n.grano)===g);
-    const mejorN = negsG.length ? Math.max(...negsG.map(n=>neto(n))) : null;
-    const mejorNeg = mejorN!==null ? negsG.find(n=>Math.abs(neto(n)-mejorN)<0.01) : null;
-    // Candidatos para comparar: peor corredor, pizarra, MATBA
-    const matbaItems = S.matba[g]||[];
-    const todosMatbaNetos = matbaItems.map(m=>+(m.val - S.params.matba - m.val*0.01).toFixed(2));
-    const mejorMatbaNeto = todosMatbaNetos.length ? Math.max(...todosMatbaNetos) : null;
-    // Armar lista de todos los candidatos con etiqueta
-    const candidatos = [];
-    if(negsG.length > 1) {
-      const peorCorrN = Math.min(...negsG.map(n=>neto(n)));
-      const peorCorrNeg = negsG.find(n=>Math.abs(neto(n)-peorCorrN)<0.01);
-      candidatos.push({val: peorCorrN, label: peorCorrNeg ? peorCorrNeg.comp : 'corredor'});
-    }
-    if(pn !== null) candidatos.push({val: pn, label: 'Pizarra Quequén'});
-    if(mejorMatbaNeto !== null) {
-      // Solo usar MATBA disponible o próxima posición como referencia, no futuros lejanos
-      const matbaDisp = matbaItems.find(m=>m.pos&&(m.pos.toLowerCase().includes('disponible')||m.pos.includes('Abr')||m.pos.includes('May')));
-      const matbaRefNeto = matbaDisp ? +(matbaDisp.val - S.params.matba - matbaDisp.val*0.01).toFixed(2) : null;
-      if(matbaRefNeto !== null) candidatos.push({val: matbaRefNeto, label: 'MATBA '+(matbaDisp.pos||'')});
-    }
-    // El peor es el mínimo de los candidatos — incluso si es mayor que el mejor corredor
-    // (en ese caso el corredor ya es peor que la referencia)
-    const peorCandidato = candidatos.length ? candidatos.reduce((a,b)=>a.val<b.val?a:b) : null;
-    // Para el diferencial: comparar mejor corredor vs peor referencia
-    // Si el corredor ya es peor que todas las referencias, comparar pizarra vs MATBA
-    let baseComparacion = null, baseLabel = '';
-    if(mejorN !== null && peorCandidato !== null) {
-      if(mejorN > peorCandidato.val) {
-        // corredor es mejor → mostrar diferencial corredor vs peor referencia
-        baseComparacion = peorCandidato.val;
-        baseLabel = peorCandidato.label;
-      } else {
-        // corredor es peor que las referencias → diferencial entre mejor referencia y corredor
-        const mejorRef = candidatos.reduce((a,b)=>a.val>b.val?a:b, {val:-Infinity,label:''});
-        baseComparacion = mejorN;        // peor = el corredor
-        baseLabel = mejorRef.label;      // etiqueta = la mejor referencia
-        // Guardar la mejor referencia para calcular el extra
-        window._mejorRefVal = mejorRef.val;
-      }
-    }
-    const peorN = baseComparacion;
-    const peorLabel = baseLabel;
-    const diff = mejorN!==null && pn!==null ? +(mejorN-pn).toFixed(1) : null;
-    const dc = diff!==null ? (diff>=0?'#1a7a4a':'#b91c1c') : '#9ca3af';
+    const negsAll = S.negocios.filter(n=>normG(n.grano)===g);
+    const negsGarcia = negsAll.filter(n=>n.comp==='Guido García');
+    if(!negsAll.length) return '';
+
+    // Mejor oferta general
+    const mejorN = Math.max(...negsAll.map(n=>neto(n)));
+    const mejorNeg = negsAll.find(n=>Math.abs(neto(n)-mejorN)<0.01);
+
+    // Mejor oferta de García
+    const mejorGarciaN = negsGarcia.length ? Math.max(...negsGarcia.map(n=>neto(n))) : null;
+    const mejorGarciaNeg = mejorGarciaN !== null ? negsGarcia.find(n=>Math.abs(neto(n)-mejorGarciaN)<0.01) : null;
+
     const rinde = RINDES[g] || 1;
-    // Si corredor es peor que referencias, comparar mejor referencia vs corredor
-    const mejorNRef = (window._mejorRefVal && mejorN !== null && window._mejorRefVal > mejorN)
-      ? window._mejorRefVal : (mejorN !== null ? mejorN : (mejorMatbaNeto||pn||0));
-    window._mejorRefVal = null; // limpiar
-    const extraPorHa = (mejorNRef !== null && peorN !== null && Math.abs(mejorNRef-peorN)>0.1)
-      ? +(Math.abs(mejorNRef-peorN)*rinde).toFixed(0) : null;
+    const diff = pn!=null ? +(mejorN-pn).toFixed(1) : null;
+    const dc = diff!=null ? (diff>=0?'#1a7a4a':'#b91c1c') : '#9ca3af';
+
+    // Diferencial vs García
+    let extraHtml = '';
+    if(mejorGarciaN !== null){
+      const diffGarcia = +(mejorN - mejorGarciaN).toFixed(1);
+      const extraPorHa = +(Math.abs(diffGarcia) * rinde).toFixed(0);
+      const signo = diffGarcia >= 0 ? '+' : '-';
+      const color = diffGarcia >= 0 ? '#1a7a4a' : '#b91c1c';
+      const label = diffGarcia >= 0
+        ? 'mejor vs Guido García · '+rinde+' tn/ha'
+        : 'García supera al mejor · '+rinde+' tn/ha';
+      extraHtml = '<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
+        +'<div style="font-size:10px;color:#6b7280">'+label+'</div>'
+        +'<div style="font-size:14px;font-weight:700;color:'+color+';font-family:\'IBM Plex Mono\',monospace">'+signo+'USD '+extraPorHa+'/ha</div>';
+    }
+
+    // Detalle del mejor negocio
     let detalleHtml = '';
     if(mejorNeg){
       const base=(+mejorNeg.precio||0)+(+mejorNeg.prima||0);
@@ -603,36 +583,27 @@ function renderChips(){
       ].filter(Boolean);
       detalleHtml = lineas.map(l=>'<div style="font-size:10px;color:#6b7280">'+l+'</div>').join('');
     }
-    const esCorredorPeor = mejorN !== null && peorCandidato !== null && mejorN < peorCandidato.val;
-    const extraSigno = esCorredorPeor ? '-' : '+';
-    const extraColor = esCorredorPeor ? '#b91c1c' : '#1a7a4a';
-    const extraTexto = esCorredorPeor
-      ? 'oferta corredor vs ' + (peorCandidato?.label||'referencia') + ' · ' + rinde + ' tn/ha'
-      : 'mejor vs ' + peorLabel + ' · ' + rinde + ' tn/ha';
-    extraHtml = extraPorHa!==null
-      ? '<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
-        +'<div style="font-size:10px;color:#6b7280">'+extraTexto+'</div>'
-        +'<div style="font-size:14px;font-weight:700;color:'+extraColor+';font-family:\'IBM Plex Mono\',monospace">'+extraSigno+'USD '+extraPorHa+'/ha</div>'
-      : '';
-    const peorNeg = peorN!==null ? negsG.find(n=>Math.abs(neto(n)-peorN)<0.01) : null;
-    // Solo mostrar peor si es distinto al mejor (diferente neto o diferente corredor)
-    const mostrarPeor = peorN !== null && peorLabel !== '';
-    const mejorHtml = mejorN!==null
-      ? (mostrarPeor ? '<div style="font-size:10px;color:#9ca3af;margin-bottom:3px">peor: <b>'+peorLabel+'</b> · USD '+peorN.toFixed(1)+'</div>' : '')
-        +'<div style="font-size:10px;color:#6b7280;margin-bottom:1px">mejor oferta · <b>'+mejorNeg.comp+'</b></div>'
-        +'<div style="font-size:18px;font-weight:700;color:#111827;font-family:\'IBM Plex Mono\',monospace;line-height:1.2">USD '+mejorN.toFixed(1)+'</div>'
-        +'<div style="font-size:11px;font-weight:600;color:'+dc+';margin-bottom:3px">'+(diff>=0?'+':'')+diff+' vs pizarra</div>'
-        +detalleHtml+extraHtml
-      : '<div style="font-size:10px;color:#9ca3af;font-style:italic;padding:3px 0">sin ofertas</div>';
+
+    const garciaInfoHtml = mejorGarciaNeg
+      ? '<div style="font-size:10px;color:#9ca3af;margin-bottom:3px">García: <b>'+mejorGarciaN.toFixed(1)+'</b> · '+mejorGarciaNeg.pos+'</div>'
+      : '<div style="font-size:10px;color:#9ca3af;font-style:italic">García sin oferta</div>';
+
+    const mejorHtml = '<div style="font-size:10px;color:#6b7280;margin-bottom:1px">mejor oferta · <b>'+mejorNeg.comp+'</b></div>'
+      +'<div style="font-size:18px;font-weight:700;color:#111827;font-family:\'IBM Plex Mono\',monospace;line-height:1.2">USD '+mejorN.toFixed(1)+'</div>'
+      +'<div style="font-size:11px;font-weight:600;color:'+dc+';margin-bottom:3px">'+(diff>=0?'+':'')+diff+' vs pizarra</div>'
+      +detalleHtml
+      +'<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
+      +garciaInfoHtml
+      +extraHtml;
+
     return '<div style="background:#f3f4f6;border-radius:8px;padding:8px 14px;display:flex;flex-direction:column;align-items:flex-start;min-width:160px;max-width:230px">'
       +'<div style="font-size:12px;font-weight:600;color:#374151">'+GL[g]+(isG?' +'+S.params.bonif+'% MG':'')+'</div>'
       +'<div style="font-size:10px;color:#9ca3af">pizarra neta: <b style="color:#6b7280">USD '+(pn!=null?pn.toFixed(1):'—')+'</b></div>'
       +'<div style="height:1px;background:#e5e7eb;width:100%;margin:5px 0"></div>'
       +mejorHtml
       +'</div>';
-  }).join('');
+  }).filter(Boolean).join('');
 }
-
 function renderStats(){
   const ns = filtroG ? S.negocios.filter(n=>n.grano===filtroG) : S.negocios;
   const nts = ns.map(n=>neto(n));
@@ -641,17 +612,17 @@ function renderStats(){
   const avg = cd.length ? (cd.reduce((s,n)=>s+(neto(n)-(pizNeto(normG(n.grano))||0)),0)/cd.length).toFixed(1) : null;
   document.getElementById('stats').innerHTML=`
     <div class="stat"><div class="stat-val">${ns.length}</div><div class="stat-lbl">Negocios</div></div>
-    <div class="stat"><div class="stat-val">${best!=null?'USD '+best.toFixed(1):'—'}</div><div class="stat-lbl">Mejor neto</div></div>
-    <div class="stat"><div class="stat-val" style="color:${avg!=null?(+avg>=0?'var(--verde)':'var(--rojo)'):'inherit'}">${avg!=null?(+avg>=0?'+':'')+avg+' USD':'—'}</div><div class="stat-lbl">Dif. prom. vs pizarra</div></div>
-    <div class="stat"><div class="stat-val" style="font-size:13px">${[...new Set(ns.map(n=>n.grano))].join(' · ')||'—'}</div><div class="stat-lbl">Granos</div></div>`;
+    <div class="stat"><div class="stat-val">${best!=null?'USD '+best.toFixed(1):'â'}</div><div class="stat-lbl">Mejor neto</div></div>
+    <div class="stat"><div class="stat-val" style="color:${avg!=null?(+avg>=0?'var(--verde)':'var(--rojo)'):'inherit'}">${avg!=null?(+avg>=0?'+':'')+avg+' USD':'â'}</div><div class="stat-lbl">Dif. prom. vs pizarra</div></div>
+    <div class="stat"><div class="stat-val" style="font-size:13px">${[...new Set(ns.map(n=>n.grano))].join(' Â· ')||'â'}</div><div class="stat-lbl">Granos</div></div>`;
 }
 
 function renderTb(){
   const el = document.getElementById('tb');
-  const ORDER = ['Trigo','Maíz','Girasol','Soja','Cebada'];
+  const ORDER = ['Trigo','MaÃ­z','Girasol','Soja','Cebada'];
   const negsAll = filtroG ? S.negocios.filter(n=>n.grano===filtroG) : S.negocios;
   if(!negsAll.length){
-    el.innerHTML='<div class="empty">No hay negocios.<br>Usá la pestaña WhatsApp o "+ Negocio" para cargar.</div>';
+    el.innerHTML='<div class="empty">No hay negocios.<br>UsÃ¡ la pestaÃ±a WhatsApp o "+ Negocio" para cargar.</div>';
     return;
   }
   el.innerHTML = ORDER.map(grano=>{
@@ -665,7 +636,7 @@ function renderTb(){
     const fl = isG ? S.params.gira : S.params.gen;
     const maxN = negs.length ? Math.max(...negs.map(n=>neto(n))) : -Infinity;
 
-    // Lista unificada ordenada cronológicamente
+    // Lista unificada ordenada cronolÃ³gicamente
     const filas=[];
     if(pn!=null) filas.push({t:'piz',ord:0});
     negs.forEach(n=>filas.push({t:'neg',ord:posOrd(n.pos),n}));
@@ -675,17 +646,17 @@ function renderTb(){
     const rows = filas.map(f=>{
       if(f.t==='piz'){
         const det = isG
-          ? `USD ${ref.toFixed(1)} + ${+(ref*S.params.bonif/100).toFixed(1)} MG − ${fl} flete`
-          : `USD ${ref.toFixed(1)} − ${fl} flete estimado`;
+          ? `USD ${ref.toFixed(1)} + ${+(ref*S.params.bonif/100).toFixed(1)} MG â ${fl} flete`
+          : `USD ${ref.toFixed(1)} â ${fl} flete estimado`;
         return `<tr class="tr-piz">
           <td><span class="sem spiz"></span></td>
           <td class="pos-td" style="color:var(--gris);font-weight:400">Disponible</td>
           <td>
             <div style="display:flex;gap:4px;flex-wrap:wrap">
-              <span class="bdg b-piz">${gk==='soja'?'Pizarra Rosario':gk==='maiz'?'Precio físico':'Pizarra Quequén'}</span>
+              <span class="bdg b-piz">${gk==='soja'?'Pizarra Rosario':gk==='maiz'?'Precio fÃ­sico':'Pizarra QuequÃ©n'}</span>
               ${isG?`<span class="bdg b-piz">+${S.params.bonif}% MG</span>`:''}
             </div>
-            <div class="refl">${{trigo:'MBC 13/4/2026 · Quequén',maiz:'Mercado Necochea/BB 13/4/2026',girasol:'MBC 13/4/2026 · Quequén',soja:'MBC 13/4/2026 · Rosario',cebada:'MBC 13/4/2026 · Quequén'}[gk]||'Pizarra referencia'} · Sin comprador</div>
+            <div class="refl">${{trigo:'MBC 13/4/2026 Â· QuequÃ©n',maiz:'Mercado Necochea/BB 13/4/2026',girasol:'MBC 13/4/2026 Â· QuequÃ©n',soja:'MBC 13/4/2026 Â· Rosario',cebada:'MBC 13/4/2026 Â· QuequÃ©n'}[gk]||'Pizarra referencia'} Â· Sin comprador</div>
             <div class="det">${det}</div>
           </td>
           <td class="r"><span class="rv">USD ${pn.toFixed(1)}</span></td>
@@ -695,15 +666,15 @@ function renderTb(){
       }
       if(f.t==='mat'){
         const matFlete = S.params.matba; // 20 USD por defecto
-        const matCom   = +(f.m.val * 0.01).toFixed(2); // 1% comisión
+        const matCom   = +(f.m.val * 0.01).toFixed(2); // 1% comisiÃ³n
         const mn       = +(f.m.val - matFlete - matCom).toFixed(2);
         return `<tr class="tr-mat">
           <td><span class="sem smat"></span></td>
           <td class="pos-td" style="color:var(--vl)">${f.m.pos}</td>
           <td>
             <div><span class="bdg b-mat">MATBA Rofex</span></div>
-            <div class="refl">${f.m.src||'MATBA Rofex · MAGYP'} · Sin comprador</div>
-            <div class="det">USD ${f.m.val.toFixed(1)} ${f.m.src?'precio físico':'futuro MATBA'} − ${matFlete} flete − ${matCom.toFixed(2)} com.(1%)</div>
+            <div class="refl">${f.m.src||'MATBA Rofex Â· MAGYP'} Â· Sin comprador</div>
+            <div class="det">USD ${f.m.val.toFixed(1)} ${f.m.src?'precio fÃ­sico':'futuro MATBA'} â ${matFlete} flete â ${matCom.toFixed(2)} com.(1%)</div>
           </td>
           <td class="r"><span class="mv">USD ${mn.toFixed(1)}</span></td>
           <td class="r"><span class="dr">referencia</span></td>
@@ -726,21 +697,21 @@ function renderTb(){
         isG?`+${bonif} MG (${S.params.bonif}%)`:'',
         gastoM>0?`-${gastoM} flete`:'',
         n.merma>0?`-${mermaU} merma`:'',
-        comPct>0?`-${comU} comisión (${comPct}%)`:'',
+        comPct>0?`-${comU} comisiÃ³n (${comPct}%)`:'',
         parU>0?`-${parU} paritaria`:'',
-      ].filter(Boolean).join(' · ');
+      ].filter(Boolean).join(' Â· ');
       const mm = mItems.find(m=>posOrd(m.pos)===f.ord);
       const matDiff = mm ? +(ne-(mm.val-S.params.matba-(mm.val*0.01))).toFixed(2) : null;
       const matHtml = matDiff!=null
         ? `<div style="margin-top:3px;font-size:11px;color:var(--vl)">vs MATBA ${mm.pos}: ${fmtD(matDiff)}</div>` : '';
       return `<tr class="${isBest?'tr-best':''}">
         <td><span class="sem s${sem}"></span></td>
-        <td class="pos-td">${n.pos||'—'}</td>
+        <td class="pos-td">${n.pos||'â'}</td>
         <td>
           <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
             <span class="bdg ${DC[n.dest]||'b-gy'}">${n.dest}</span>
             <span class="bdg ${CC[n.cond]||'b-gy'}">${n.cond}</span>
-            ${isBest?'<span class="star">★ Mejor</span>':''}
+            ${isBest?'<span class="star">â Mejor</span>':''}
           </div>
           <div class="comp">${n.comp}</div>
           <div class="det">${detArr}</div>
@@ -748,8 +719,8 @@ function renderTb(){
           ${matHtml}
         </td>
         <td class="r"><span class="nv">USD ${ne.toFixed(1)}</span></td>
-        <td class="r">${diff!=null?fmtD(diff)+'<span class="dr"> vs piz.</span>':'—'}</td>
-        <td class="r"><button class="btn-sm btn-del" onclick="delNeg(${n.id})">✕</button></td>
+        <td class="r">${diff!=null?fmtD(diff)+'<span class="dr"> vs piz.</span>':'â'}</td>
+        <td class="r"><button class="btn-sm btn-del" onclick="delNeg(${n.id})">â</button></td>
       </tr>`;
     }).join('');
 
@@ -762,8 +733,8 @@ function renderTb(){
       <div class="tw"><table>
         <thead><tr>
           <th style="width:26px"></th>
-          <th>Posición</th>
-          <th>Comprador · Detalle</th>
+          <th>PosiciÃ³n</th>
+          <th>Comprador Â· Detalle</th>
           <th class="r">Neto USD/t</th>
           <th class="r">Diferencias</th>
           <th style="width:42px"></th>
@@ -774,7 +745,7 @@ function renderTb(){
   }).filter(Boolean).join('<div class="divider"></div>');
 }
 
-// ══ PIZARRA ══════════════════════════════════════════════════
+// ââ PIZARRA ââââââââââââââââââââââââââââââââââââââââââââââââââ
 function fillPizForm(){
   ['trigo','maiz','girasol','soja','cebada'].forEach(g=>{
     const el=document.getElementById('rp-'+g); if(el) el.value=S.piz[g]||'';
@@ -794,7 +765,7 @@ function savePiz(){
   S.params.gira  = parseFloat(document.getElementById('fp-gira').value)||7;
   S.params.bonif = parseFloat(document.getElementById('fp-bonif').value)||15;
   S.params.matba = parseFloat(document.getElementById('fp-matba').value)||20;
-  save(); toast('Pizarra guardada ✓');
+  save(); toast('Pizarra guardada â');
 }
 function renderMatbaEd(){
   const MESES=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
@@ -810,19 +781,19 @@ function renderMatbaEd(){
               </select>
               <span style="font-size:11px;color:var(--gris)">USD</span>
               <input type="number" step="0.5" value="${m.val}" style="width:72px;font-size:12px;padding:4px 6px;border:1px solid var(--borde);border-radius:5px;font-family:'IBM Plex Mono',monospace" onchange="S.matba['${g}'][${i}].val=parseFloat(this.value)||0">
-              <button onclick="S.matba['${g}'].splice(${i},1);renderMatbaEd()" style="font-size:12px;color:var(--rojo);background:none;border:none;cursor:pointer">✕</button>
+              <button onclick="S.matba['${g}'].splice(${i},1);renderMatbaEd()" style="font-size:12px;color:var(--rojo);background:none;border:none;cursor:pointer">â</button>
             </div>`).join('')}
           <button onclick="S.matba['${g}'].push({pos:'Jul 2026',val:0});renderMatbaEd()" style="font-size:11px;padding:4px 10px;border:1px dashed var(--borde);background:none;border-radius:5px;cursor:pointer;color:var(--gris)">+ Agregar</button>
         </div>
       </div>`).join('');
 }
-function saveMatba(){ save(); toast('MATBA guardado ✓'); }
+function saveMatba(){ save(); toast('MATBA guardado â'); }
 
-// ══ NUEVO NEGOCIO ════════════════════════════════════════════
+// ââ NUEVO NEGOCIO ââââââââââââââââââââââââââââââââââââââââââââ
 function addNeg(){
   const c=document.getElementById('n-c').value.trim();
   const p=parseFloat(document.getElementById('n-p').value);
-  if(!c||!p||p<=0){ alert('Completá comprador y precio.'); return; }
+  if(!c||!p||p<=0){ alert('CompletÃ¡ comprador y precio.'); return; }
   S.negocios.push({
     id: Date.now(),
     grano: document.getElementById('n-g').value,
@@ -843,16 +814,16 @@ function addNeg(){
   ['n-c','n-p','n-pos','n-o'].forEach(id=>document.getElementById(id).value='');
   ['n-pr','n-m'].forEach(id=>document.getElementById(id).value='0');
   document.getElementById('n-f').value='20';
-  toast('Negocio agregado ✓'); sw('tab');
+  toast('Negocio agregado â'); sw('tab');
 }
 function delNeg(id){ S.negocios=S.negocios.filter(n=>n.id!==id); save(); renderAll(); }
 
 
-// ══ ACTUALIZACIÓN AUTOMÁTICA ════════════════════════════════════════
+// ââ ACTUALIZACIÃN AUTOMÃTICA ââââââââââââââââââââââââââââââââââââââââ
 async function actualizarTodo(){
   const apiKey = getApiKey();
   if(!apiKey){
-    alert('Necesitás una API key de Anthropic.\nAnda a la pestaña WhatsApp para configurarla.');
+    alert('NecesitÃ¡s una API key de Anthropic.\nAnda a la pestaÃ±a WhatsApp para configurarla.');
     return;
   }
   const btn = document.getElementById('act-btn');
@@ -878,7 +849,7 @@ async function actualizarTodo(){
     const texto = (data.content||[]).filter(c=>c.type==='text').map(c=>c.text).join('').trim();
     // Extraer JSON aunque haya texto alrededor
     const jsonMatch = texto.match(/\{[\s\S]*\}/);
-    if(!jsonMatch) throw new Error('No se encontró JSON en la respuesta');
+    if(!jsonMatch) throw new Error('No se encontrÃ³ JSON en la respuesta');
     const clean = jsonMatch[0];
     const result = JSON.parse(clean);
     let cambios=[];
@@ -902,12 +873,12 @@ async function actualizarTodo(){
       if(m.soja_may2026) {upd(S.matba.soja,'May 2026',m.soja_may2026); cambios.push('MATBA Soja May: USD '+m.soja_may2026);}
     }
     save(); renderAll();
-    const tc=result.tc_bna?' · TC BNA: $'+result.tc_bna:'';
+    const tc=result.tc_bna?' Â· TC BNA: $'+result.tc_bna:'';
     const fuentes=(result.fuentes||[]).join(', ');
-    log.innerHTML='<b>Actualizado '+hoy+'</b><br>'+cambios.map(c=>'• '+c).join('<br>')+(fuentes?'<br><span style="color:#6b7280;font-size:10px">Fuentes: '+fuentes+tc+'</span>':'');
-    ultima.textContent='Última actualización: '+new Date().toLocaleTimeString('es-AR');
+    log.innerHTML='<b>Actualizado '+hoy+'</b><br>'+cambios.map(c=>'â¢ '+c).join('<br>')+(fuentes?'<br><span style="color:#6b7280;font-size:10px">Fuentes: '+fuentes+tc+'</span>':'');
+    ultima.textContent='Ãltima actualizaciÃ³n: '+new Date().toLocaleTimeString('es-AR');
 
-    // ── Procesar WhatsApp pendiente si hay texto ──
+    // ââ Procesar WhatsApp pendiente si hay texto ââ
     const waTxt = document.getElementById('wa-txt')?.value?.trim();
     const waComp = document.getElementById('wa-comp')?.value?.trim() || 'WhatsApp';
     const waFecha = document.getElementById('wa-fecha')?.value || new Date().toISOString().split('T')[0];
@@ -926,18 +897,18 @@ async function actualizarTodo(){
         if(Array.isArray(waItems) && waItems.length){
           waItems.forEach((it,i)=>{
             S.negocios.push({
-              id:Date.now()+i, grano:it.grano||'Trigo', dest:'Quequén', comp:waComp,
+              id:Date.now()+i, grano:it.grano||'Trigo', dest:'QuequÃ©n', comp:waComp,
               cond:it.condicion||'Disponible', precio:+(it.precio_usd||0), prima:+(it.prima_usd||0),
               gastos:20, merma:0, com:1, par:0,
               pos:it.posicion||'Disponible', fecha:waFecha, obs:it.observaciones||''
             });
           });
           save(); renderAll();
-          log.innerHTML += '<br>✅ WhatsApp: '+waItems.length+' negocio'+(waItems.length!==1?'s':'')+' agregado'+(waItems.length!==1?'s':'')+' ('+waComp+')';
+          log.innerHTML += '<br>â WhatsApp: '+waItems.length+' negocio'+(waItems.length!==1?'s':'')+' agregado'+(waItems.length!==1?'s':'')+' ('+waComp+')';
           document.getElementById('wa-txt').value = '';
         }
       } catch(e2){
-        log.innerHTML += '<br>⚠️ WhatsApp no procesado: '+e2.message;
+        log.innerHTML += '<br>â ï¸ WhatsApp no procesado: '+e2.message;
       }
     }
 
@@ -947,31 +918,31 @@ async function actualizarTodo(){
   btn.disabled=false; btn.innerHTML='Actualizar Todo';
 }
 
-// ══ EXPORTAR / LIMPIAR ═══════════════════════════════════════
+// ââ EXPORTAR / LIMPIAR âââââââââââââââââââââââââââââââââââââââ
 function exportCSV(){
   if(!S.negocios.length){ toast('No hay negocios'); return; }
-  const H=['Fecha','Grano','Destino','Comprador','Condición','Posición','Precio','Prima','Gastos','Merma%','Neto','Obs'];
+  const H=['Fecha','Grano','Destino','Comprador','CondiciÃ³n','PosiciÃ³n','Precio','Prima','Gastos','Merma%','Neto','Obs'];
   const R=S.negocios.map(n=>[n.fecha,n.grano,n.dest,n.comp,n.cond,n.pos,n.precio,n.prima,n.gastos,n.merma,neto(n).toFixed(2),n.obs||'']);
   const csv=[H,...R].map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
   const a=document.createElement('a');
   a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
   a.download='negocios_'+new Date().toISOString().split('T')[0]+'.csv';
-  a.click(); toast('CSV exportado ✓');
+  a.click(); toast('CSV exportado â');
 }
 function clearAll(){
-  if(!confirm('¿Borrar todos los negocios?')) return;
+  if(!confirm('Â¿Borrar todos los negocios?')) return;
   S.negocios=[]; save(); renderAll(); toast('Negocios eliminados');
 }
 
-// ══ WHATSAPP + IA ════════════════════════════════════════════
+// ââ WHATSAPP + IA ââââââââââââââââââââââââââââââââââââââââââââ
 let _waI=[], _waC='', _waF='';
 async function parseWA(){
   const apiKey = getApiKey();
-  if(!apiKey){ alert('Primero guardá tu API key de Anthropic arriba.'); return; }
+  if(!apiKey){ alert('Primero guardÃ¡ tu API key de Anthropic arriba.'); return; }
   const txt  = document.getElementById('wa-txt').value.trim();
   const comp = document.getElementById('wa-comp').value.trim();
   const fecha= document.getElementById('wa-fecha').value;
-  if(!txt){ alert('Pegá el mensaje primero.'); return; }
+  if(!txt){ alert('PegÃ¡ el mensaje primero.'); return; }
   const btn=document.getElementById('wa-btn');
   btn.disabled=true; btn.innerHTML='<span class="spin"></span>Interpretando...';
   document.getElementById('wa-res').innerHTML='<div style="color:var(--gris);font-size:13px;padding:12px 0"><span class="spin"></span>Analizando...</div>';
@@ -981,7 +952,7 @@ async function parseWA(){
       headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
       body: JSON.stringify({
         model:'claude-haiku-4-5-20251001', max_tokens:900,
-        messages:[{role:'user',content:`Analizá este mensaje de mercado de granos argentino. Extraé cada negocio. Respondé SOLO JSON array sin markdown. Cada objeto: {grano,precio_usd,prima_usd,condicion,posicion,observaciones}. Si hay prima es campo separado. Si precio en pesos dividí por 1372. Mensaje: "${txt}"`}]
+        messages:[{role:'user',content:`AnalizÃ¡ este mensaje de mercado de granos argentino. ExtraÃ© cada negocio. RespondÃ© SOLO JSON array sin markdown. Cada objeto: {grano,precio_usd,prima_usd,condicion,posicion,observaciones}. Si hay prima es campo separado. Si precio en pesos dividÃ­ por 1372. Mensaje: "${txt}"`}]
       })
     });
     const data=await resp.json();
@@ -994,26 +965,26 @@ async function parseWA(){
       <div style="font-size:13px;font-weight:600;margin-bottom:8px">${items.length} negocio${items.length!==1?'s':''} detectado${items.length!==1?'s':''}</div>
       ${items.map((it,i)=>`<div class="wa-item">
         <div>
-          <div class="wa-main">${it.grano||'—'} <span style="font-weight:400;color:var(--gris)">${it.posicion||''}</span></div>
+          <div class="wa-main">${it.grano||'â'} <span style="font-weight:400;color:var(--gris)">${it.posicion||''}</span></div>
           <div class="wa-precio">USD ${((+it.precio_usd||0)+(+it.prima_usd||0)).toFixed(1)}/t</div>
-          <div class="wa-sub">${it.condicion||''}${+it.prima_usd>0?' · +'+it.prima_usd+' prima':''}${it.observaciones?' · '+it.observaciones:''}</div>
+          <div class="wa-sub">${it.condicion||''}${+it.prima_usd>0?' Â· +'+it.prima_usd+' prima':''}${it.observaciones?' Â· '+it.observaciones:''}</div>
         </div>
         <button class="btn-sm" onclick="addDesdeWA(${i})">+ Agregar</button>
       </div>`).join('')}
       <button class="btn" onclick="addTodosWA()" style="margin-top:4px">Agregar todos</button>`;
   } catch(e){
-    document.getElementById('wa-res').innerHTML=`<div style="color:var(--rojo);font-size:13px;padding:8px 0">Error: ${e.message}. Verificá la API key o el texto.</div>`;
+    document.getElementById('wa-res').innerHTML=`<div style="color:var(--rojo);font-size:13px;padding:8px 0">Error: ${e.message}. VerificÃ¡ la API key o el texto.</div>`;
   }
   btn.disabled=false; btn.textContent='Interpretar con IA';
 }
 function addDesdeWA(i){
   const it=_waI[i];
   S.negocios.push({
-    id:Date.now()+i, grano:it.grano||'Trigo', dest:'Quequén', comp:_waC,
+    id:Date.now()+i, grano:it.grano||'Trigo', dest:'QuequÃ©n', comp:_waC,
     cond:it.condicion||'Disponible', precio:+(it.precio_usd||0), prima:+(it.prima_usd||0),
     gastos:20, merma:0, pos:it.posicion||'Disponible', fecha:_waF, obs:it.observaciones||''
   });
-  save(); toast('Negocio agregado ✓');
+  save(); toast('Negocio agregado â');
 }
 function addTodosWA(){
   _waI.forEach((_,i)=>addDesdeWA(i));
