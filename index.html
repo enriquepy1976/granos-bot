@@ -1,6 +1,104 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tracker de Granos — Pereyra</title>
+function cargarNegocios(){
+  negocios=[
+{grano:'Trigo',dest:'Quequén',comp:'Pablo Cocola',cond:'Disponible',precio:215,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Disponible',fecha:'2026-04-15',obs:''},
+{grano:'Trigo',dest:'Quequén',comp:'Pablo Cocola',cond:'Fija a término',precio:217,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Dic 2026/Ene 2027',fecha:'2026-04-15',obs:'Trigo QQ Dic/Ene'},
+{grano:'Trigo',dest:'Quequén',comp:'Pablo Cocola',cond:'A fijar',precio:210,prima:2,gastos:20,merma:0,com:1,par:0,pos:'Hasta 30/12/2026',fecha:'2026-04-15',obs:'Pizarra QQ + USD 2. Vol. limitado.'},
+{grano:'Cebada',dest:'Quequén',comp:'Pablo Cocola',cond:'Fija a término',precio:207,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Abr 2026',fecha:'2026-04-15',obs:'Cebada forr QQ'},
+{grano:'Cebada',dest:'Quequén',comp:'Pablo Cocola',cond:'Fija a término',precio:208,prima:0,gastos:20,merma:0,com:1,par:0,pos:'May 2026',fecha:'2026-04-15',obs:'Cebada forr QQ'},
+{grano:'Cebada',dest:'Quequén',comp:'Pablo Cocola',cond:'Fija a término',precio:210,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Jun 2026',fecha:'2026-04-15',obs:'Cebada forr QQ'},
+{grano:'Cebada',dest:'Quequén',comp:'Pablo Cocola',cond:'Fija a término',precio:207,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Dic 2026/Ene 2027',fecha:'2026-04-15',obs:'Cebada forr Dic/Ene'},
+{grano:'Girasol',dest:'Tandil',comp:'Pablo Cocola',cond:'Disponible',precio:360,prima:20,gastos:7,merma:0.5,com:1,par:0,pos:'Abr/May',fecha:'2026-04-15',obs:'Común. Sin flete salida ni paritaria'},
+{grano:'Girasol',dest:'Tandil',comp:'Pablo Cocola',cond:'Fija a término',precio:360,prima:40,gastos:7,merma:0.5,com:1,par:0,pos:'Jun/Jul',fecha:'2026-04-15',obs:'Común Jun/Jul'},
+{grano:'Girasol',dest:'Tandil',comp:'Pablo Cocola',cond:'Disponible',precio:360,prima:30,gastos:7,merma:0.5,com:1,par:0,pos:'Disponible',fecha:'2026-04-15',obs:'Oleico'},
+{grano:'Maíz',dest:'Quequén',comp:'Pablo Cocola',cond:'Disponible',precio:202,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Disponible',fecha:'2026-04-15',obs:''},
+{grano:'Maíz',dest:'Quequén',comp:'Pablo Cocola',cond:'Fija a término',precio:187,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Jul 2026',fecha:'2026-04-15',obs:''},
+{grano:'Maíz',dest:'Quequén',comp:'Pablo Cocola',cond:'Fija a término',precio:187,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Ago 2026',fecha:'2026-04-15',obs:''},
+{grano:'Soja',dest:'Quequén',comp:'Pablo Cocola',cond:'A fijar',precio:307,prima:0,gastos:20,merma:0,com:1,par:0,pos:'May 2026',fecha:'2026-04-08',obs:'A fijar pizarra Rosario - USD 7. Hasta 30/06/2026.'},
+{grano:'Girasol',dest:'Necochea',comp:'Pedro Perea',cond:'Disponible',precio:360,prima:30,gastos:20,merma:0.5,com:1,par:0,pos:'Disponible',fecha:'2026-04-15',obs:'Oleico. Muerto en 360+30.'},
+{grano:'Maíz',dest:'Necochea',comp:'Mercado Necochea/BB',cond:'Fija a término',precio:190,prima:0,gastos:20,merma:0,com:0,par:0,pos:'Jul 2026',fecha:'2026-04-15',obs:'Maíz Neco Julio a trabajar'},
+{grano:'Girasol',dest:'Tandil',comp:'Guido García',cond:'Disponible',precio:360,prima:30,gastos:7,merma:0.5,com:3,par:4,pos:'Disponible',fecha:'2026-04-14',obs:'Oleico. Pago 10 días.'},
+{grano:'Girasol',dest:'Tandil',comp:'Guido García',cond:'Disponible',precio:360,prima:15,gastos:7,merma:0.5,com:3,par:4,pos:'Disponible',fecha:'2026-04-14',obs:'Común. Pago 10 días.'},
+{grano:'Trigo',dest:'Quequén',comp:'Guido García',cond:'Fija a término',precio:220,prima:0,gastos:20,merma:0,com:3,par:4,pos:'Ene 2027',fecha:'2026-04-14',obs:''},
+{grano:'Cebada',dest:'Quequén',comp:'Guido García',cond:'Fija a término',precio:222,prima:0,gastos:20,merma:0,com:3,par:4,pos:'2027',fecha:'2026-04-14',obs:'Idea precio 2027.'},
+{grano:'Maíz',dest:'Quequén',comp:'Guido García',cond:'Fija a término',precio:180,prima:0,gastos:20,merma:0,com:3,par:4,pos:'2027',fecha:'2026-04-14',obs:'Idea precio 2027.'}
+];
+  document.getElementById('ultima-act').textContent='Datos al 15/04/2026';
+  renderAll();
+}
+// ══ EXPORTAR / LIMPIAR ═══════════════════════════════════════
+function exportCSV(){
+  if(!S.negocios.length){ toast('No hay negocios'); return; }
+  const H=['Fecha','Grano','Destino','Comprador','Condición','Posición','Precio','Prima','Gastos','Merma%','Neto','Obs'];
+  const R=S.negocios.map(n=>[n.fecha,n.grano,n.dest,n.comp,n.cond,n.pos,n.precio,n.prima,n.gastos,n.merma,neto(n).toFixed(2),n.obs||'']);
+  const csv=[H,...R].map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
+  a.download='negocios_'+new Date().toISOString().split('T')[0]+'.csv';
+  a.click(); toast('CSV exportado ✓');
+}
+function clearAll(){
+  if(!confirm('¿Borrar todos los negocios?')) return;
+  S.negocios=[]; save(); renderAll(); toast('Negocios eliminados');
+}
+
+// ══ WHATSAPP + IA ════════════════════════════════════════════
+let _waI=[], _waC='', _waF='';
+async function parseWA(){
+  const apiKey = getApiKey();
+  if(!apiKey){ alert('Primero guardá tu API key de Anthropic arriba.'); return; }
+  const txt  = document.getElementById('wa-txt').value.trim();
+  const comp = document.getElementById('wa-comp').value.trim();
+  const fecha= document.getElementById('wa-fecha').value;
+  if(!txt){ alert('Pegá el mensaje primero.'); return; }
+  const btn=document.getElementById('wa-btn');
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>Interpretando...';
+  document.getElementById('wa-res').innerHTML='<div style="color:var(--gris);font-size:13px;padding:12px 0"><span class="spin"></span>Analizando...</div>';
+  try{
+    const resp = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body: JSON.stringify({
+        model:'claude-haiku-4-5-20251001', max_tokens:900,
+        messages:[{role:'user',content:`Analizá este mensaje de mercado de granos argentino. Extraé cada negocio. Respondé SOLO JSON array sin markdown. Cada objeto: {grano,precio_usd,prima_usd,condicion,posicion,observaciones}. Si hay prima es campo separado. Si precio en pesos dividí por 1372. Mensaje: "${txt}"`}]
+      })
+    });
+    const data=await resp.json();
+    if(data.error) throw new Error(data.error.message);
+    const raw=(data.content||[]).map(c=>c.text||'').join('').trim().replace(/```json|```/g,'').trim();
+    const items=JSON.parse(raw);
+    if(!Array.isArray(items)||!items.length) throw new Error('Sin resultados');
+    _waI=items; _waC=comp||'WhatsApp'; _waF=fecha;
+    document.getElementById('wa-res').innerHTML=`
+      <div style="font-size:13px;font-weight:600;margin-bottom:8px">${items.length} negocio${items.length!==1?'s':''} detectado${items.length!==1?'s':''}</div>
+      ${items.map((it,i)=>`<div class="wa-item">
+        <div>
+          <div class="wa-main">${it.grano||'—'} <span style="font-weight:400;color:var(--gris)">${it.posicion||''}</span></div>
+          <div class="wa-precio">USD ${((+it.precio_usd||0)+(+it.prima_usd||0)).toFixed(1)}/t</div>
+          <div class="wa-sub">${it.condicion||''}${+it.prima_usd>0?' · +'+it.prima_usd+' prima':''}${it.observaciones?' · '+it.observaciones:''}</div>
+        </div>
+        <button class="btn-sm" onclick="addDesdeWA(${i})">+ Agregar</button>
+      </div>`).join('')}
+      <button class="btn" onclick="addTodosWA()" style="margin-top:4px">Agregar todos</button>`;
+  } catch(e){
+    document.getElementById('wa-res').innerHTML=`<div style="color:var(--rojo);font-size:13px;padding:8px 0">Error: ${e.message}. Verificá la API key o el texto.</div>`;
+  }
+  btn.disabled=false; btn.textContent='Interpretar con IA';
+}
+function addDesdeWA(i){
+  const it=_waI[i];
+  S.negocios.push({
+    id:Date.now()+i, grano:it.grano||'Trigo', dest:'Quequén', comp:_waC,
+    cond:it.condicion||'Disponible', precio:+(it.precio_usd||0), prima:+(it.prima_usd||0),
+    gastos:20, merma:0, pos:it.posicion||'Disponible', fecha:_waF, obs:it.observaciones||''
+  });
+  save(); toast('Negocio agregado ✓');
+}
+function addTodosWA(){
+  _waI.forEach((_,i)=>addDesdeWA(i));
+  document.getElementById('wa-res').innerHTML='';
+  document.getElementById('wa-txt').value='';
+  sw('tab');
+}
+</script>
+</body>
+</html>
