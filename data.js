@@ -17,6 +17,7 @@ window.TRACKER_DATA = {
     {grano:'Maíz',dest:'Quequén',comp:'Pablo Cocola',cond:'Disponible',precio:202,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Disponible',obs:''},
     {grano:'Maíz',dest:'Quequén',comp:'Pablo Cocola',cond:'Fija a término',precio:188,prima:0,gastos:20,merma:0,com:1,par:0,pos:'Jul/Ago 2026',obs:''},
     {grano:'Soja',dest:'Quequén',comp:'Pablo Cocola',cond:'A fijar',precio:307,prima:0,gastos:20,merma:0,com:1,par:0,pos:'May 2026',obs:'A fijar pizarra Rosario - USD 7. Hasta 30/06/2026.'},
+    {grano:'Girasol',dest:'Necochea',comp:'Pedro Perea',cond:'Disponible',precio:360,prima:30,gastos:20,merma:0.5,com:1,par:0,pos:'Disponible',obs:'Oleico. 210 tn, reciben seco.'},
     {grano:'Maíz',dest:'Necochea',comp:'Mercado Necochea/BB',cond:'Disponible',precio:200,prima:0,gastos:20,merma:0,com:0,par:0,pos:'Disponible',obs:'Precio idea'},
     {grano:'Maíz',dest:'Necochea',comp:'Mercado Necochea/BB',cond:'Fija a término',precio:190,prima:0,gastos:20,merma:0,com:0,par:0,pos:'Jul 2026',obs:'Precio idea Necochea/BB'},
     {grano:'Soja',dest:'Necochea',comp:'Mercado Necochea/BB',cond:'Disponible',precio:313,prima:0,gastos:20,merma:0,com:0,par:0,pos:'May 2026',obs:'Soja Mayo Necochea'},
