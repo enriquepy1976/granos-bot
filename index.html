@@ -105,6 +105,7 @@ footer{padding:10px 20px;text-align:center;font-size:11px;color:var(--gris);bord
 <div class="tabla-section" id="tabla-section"></div>
 <footer>Tracker de Granos &mdash; Pereyra &mdash; <span id="ultima-act"></span></footer>
 <script>
+function normPos(pos){if(!pos&&pos!==0)return 'Disponible';const s=String(pos);const isoMatch=s.match(/^(\d{4})-(\d{2})-(\d{2})/);if(isoMatch){const mm=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];return mm[parseInt(isoMatch[2])-1]+' '+isoMatch[1]}return s}
 const APPS_URL='https://script.google.com/macros/s/AKfycbzqHBjbxC_rfAMkuZ1BwuLB6Oii7Hacbk_U63wYHBiWUO87YH0CqzZ4thoST7OdGCk/exec';
 const GARCIA='Guido García';
 const GRANOS=['Trigo','Maíz','Girasol','Soja','Cebada'];
@@ -128,7 +129,7 @@ function guardarMatba(){GRANOS.forEach(g=>{const v=parseFloat(document.getElemen
 function llenarInputs(){GRANOS.forEach(g=>{const pe=document.getElementById('piz-'+normG(g));const me=document.getElementById('matba-'+normG(g));if(pe)pe.value=piz[g]||'';if(me)me.value=matba[g]||''})}
 function toast(msg){let t=document.getElementById('toast-el');if(!t){t=document.createElement('div');t.id='toast-el';t.style.cssText='position:fixed;bottom:24px;right:24px;background:#1a3a1a;color:white;padding:10px 18px;border-radius:8px;font-size:13px;z-index:999;transition:opacity .3s';document.body.appendChild(t)}t.textContent=msg;t.style.opacity='1';setTimeout(()=>t.style.opacity='0',2500)}
 
-async function cargarNegocios(){document.getElementById('chips-row').innerHTML='<div class="loading">Cargando negocios...</div>';try{const r=await fetch(APPS_URL);const data=await r.json();if(data.ok&&data.negocios?.length){negocios=data.negocios.map(n=>({...n,grano:keyG(n.grano)}));document.getElementById('ultima-act').textContent='Actualizado: '+new Date().toLocaleString('es-AR');renderTodo()}else throw new Error('Sin datos')}catch(e){document.getElementById('chips-row').innerHTML='<div class="error-box">No se pudo conectar con la planilla.<br><small>'+e.message+'</small></div>'}}
+async function cargarNegocios(){document.getElementById('chips-row').innerHTML='<div class="loading">Cargando negocios...</div>';try{const r=await fetch(APPS_URL);const data=await r.json();if(data.ok&&data.negocios?.length){negocios=data.negocios.map(n=>({...n,grano:keyG(n.grano),pos:normPos(n.pos)}));document.getElementById('ultima-act').textContent='Actualizado: '+new Date().toLocaleString('es-AR');renderTodo()}else throw new Error('Sin datos')}catch(e){document.getElementById('chips-row').innerHTML='<div class="error-box">No se pudo conectar con la planilla.<br><small>'+e.message+'</small></div>'}}
 
 function renderChips(){const row=document.getElementById('chips-row');if(!negocios.length){row.innerHTML='<div class="sin-dato">Sin negocios</div>';return}
 row.innerHTML=GRANOS.map(grano=>{const ng=negocios.filter(n=>n.grano===grano);if(!ng.length&&!piz[grano])return '';
